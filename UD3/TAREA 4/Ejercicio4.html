@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const traductor=new Map();
+    traductor.set("CASA",["house","mais","casa"]);
+    traductor.set("COCHE",["car","voiture","machina"]);
+    traductor.set("PERRO",["dog","chien","cane"]);
+    traductor.set("GATO",["cat","chat","gatto"]);
+    traductor.set("SOL,",["sun","soleil","sole"]);
+
+    document.write("<h1>Traductor Español-Inglés-Francés-Italiano</h1>");
+
+    for (const [espanhol, traducciones] of traductor) {
+        document.write("<b>"+espanhol+"</b>: ");
+        document.write("<p>" + traducciones.join(", ") + "</p>");
+    }
+</script>
+</html>

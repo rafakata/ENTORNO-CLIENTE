@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <script>
+        const miarray = [1, 2, 3, 4, 13, 4, 5, 2, 1, 6, 7, 5, 8, 9, 4];
+        
+        
+        document.write("El array original tiene los siguientes elementos:<br>");
+        document.write(miarray.join(",") + "<br><br>");
+        
+        
+        const elementosRepetidos = [];
+        
+        for (let i = 0; i < miarray.length; i++) {
+            let elementoActual = miarray[i];
+            let yaEsRepetido = false;
+            
+       
+            for (let k = 0; k < elementosRepetidos.length; k++) {
+                if (elementosRepetidos[k] === elementoActual) {
+                    yaEsRepetido = true;
+                    break;
+                }
+            }
+            
+
+            if (!yaEsRepetido) {
+                let contador = 0;
+                for (let j = 0; j < miarray.length; j++) {
+                    if (miarray[j] === elementoActual) {
+                        contador++;
+                    }
+                }
+                if (contador > 1) {
+                    elementosRepetidos.push(elementoActual);
+                }
+            }
+        }
+        
+
+        document.write("Se encontraron " + elementosRepetidos.length + " elementos repetidos.<br><br>");
+        
+
+        document.write("Los elementos repetidos se encuentran en las posiciones:<br>");
+        
+        for (let i = 0; i < elementosRepetidos.length; i++) {
+            let elementoActual = elementosRepetidos[i];
+            
+
+            for (let j = 0; j < miarray.length; j++) {
+                if (miarray[j] === elementoActual) {
+                    document.write("miarray[" + j + "] = " + elementoActual + "<br>");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

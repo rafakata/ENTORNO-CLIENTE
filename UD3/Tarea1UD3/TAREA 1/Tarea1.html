@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let array=[];
+    for (let i=0;i<100;i++){
+      let aleatorio=Math.floor(Math.random()*100); 
+      array.push(aleatorio); 
+    }
+    let pares=[];
+    for (let i=0;i<100;i++){
+        if (array[i]%2===0){
+            pares.push(array[i]);
+        }
+    }
+
+        document.write("<h2>Array completo (100 números aleatorios):</h2>");
+        document.write("<p>" + array.join(", ") + "</p>");
+        
+        document.write("<h2>Números pares encontrados:</h2>");
+        document.write("<p>" + pares.join(", ") + "</p>");
+        
+        document.write("<h2>Resumen:</h2>");
+        document.write("<p>Total de números generados: " + array.length + "</p>");
+        document.write("<p>Números pares encontrados: " + pares.length + "</p>");
+</script>
+</html>

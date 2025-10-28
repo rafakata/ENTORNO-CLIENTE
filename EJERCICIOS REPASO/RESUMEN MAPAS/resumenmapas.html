@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+const inventario = new Map();
+
+inventario.set("manzanas", { cantidad: 10, precio: 2 });
+inventario.set("naranjas", { cantidad: 5, precio: 3 });
+inventario.set("plátanos", { cantidad: 8, precio: 1.5 });
+
+console.log("2. Inventario inicial:");
+console.log(inventario);
+
+
+if (inventario.has("manzanas")) {
+    const manzanas = inventario.get("manzanas");
+    manzanas.cantidad += 5;
+    inventario.set("manzanas", manzanas);
+}
+console.log("\n3. Después de incrementar manzanas:");
+console.log(inventario);
+
+
+const existePera = inventario.has("pera");
+console.log("\n4. ¿Existe 'pera' en el inventario?", existePera);
+
+
+if (inventario.has("naranjas")) {
+    const precioNaranjas = inventario.get("naranjas").precio;
+    console.log("\n5. Precio de naranjas:", precioNaranjas);
+}
+
+
+const eliminado = inventario.delete("plátanos");
+console.log("\n6. ¿Se eliminaron los plátanos?", eliminado);
+console.log("Inventario después de eliminar plátanos:");
+console.log(inventario);
+
+
+console.log("\n7. Lista completa del inventario:");
+for (let [producto, info] of inventario) {
+    console.log(`   ${producto}: ${info.cantidad} unidades, ${info.precio} € cada una`);
+}
+
+
+const inventarioCopia = new Map(inventario);
+console.log("\n8. Copia del inventario:");
+console.log(inventarioCopia);
+
+
+inventario.clear();
+console.log("\n9. ¿Está vacío el inventario original?", inventario.size === 0);
+console.log("Inventario original después de limpiar:");
+console.log(inventario);
+
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar Mapas</title>
+</head>
+<body>
+</body>
+<script>
+   const frutas = new Map([
+            ['manzana', "D"],
+            ['pera', 'C'],
+            ['naranja', 'B'],
+            ['plátano', 'A'],
+            ['kiwi', 'E']
+        ]);
+
+        console.log("Mapa original:");
+        console.log(frutas);
+
+       
+        let arrayEntradas = [...frutas];
+        
+        
+        for (let i = 0; i < arrayEntradas.length; i++) {
+            arrayEntradas[i].reverse();
+        }
+        
+        
+        arrayEntradas.sort();
+        
+        for (let i = 0; i < arrayEntradas.length; i++) {
+            arrayEntradas[i].reverse();
+        }
+        
+        const ordenado = new Map(arrayEntradas);
+
+        console.log("Mapa ordenado:");
+        console.log(ordenado); 
+</script>
+</html>

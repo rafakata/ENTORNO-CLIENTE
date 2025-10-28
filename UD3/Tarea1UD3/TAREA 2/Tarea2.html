@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+        const numerosIngresados = [];      
+        const numerosOrganizados = [];     
+        let valor;
+        
+        do {
+            valor = parseFloat(prompt("Ingresa un número (0 para finalizar):"));
+            if (!isNaN(valor) && valor !== 0) {
+                numerosIngresados.push(valor);
+                if (valor < 50) {
+                    numerosOrganizados.unshift(valor);
+                } else {
+                    numerosOrganizados.push(valor);
+                }
+            }
+        } while (valor !== 0);  
+        
+        document.write("<h2>Números ingresados (orden original):</h2>");
+        document.write("<p>" + numerosIngresados.join(", ") + "</p>");
+        
+        document.write("<h2>Números organizados (< 50 al principio, >= 50 al final):</h2>");
+        document.write("<p>" + numerosOrganizados.join(", ") + "</p>");
+</script>
+</html>

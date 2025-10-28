@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pirámide (Abrir la consola.)</h1>
+</body>
+<script>
+    var altura=prompt("Introduce, en número entero, la altura de la pirámide: ");
+    if (altura>0){
+        console.log("Por el número introducido, la pirámide tendrá "+altura+" *.");
+        for (var fila=1;fila<=altura;fila++){
+            var linea="";
+            for (var asteriscos=1;asteriscos<=fila;asteriscos++){
+                linea+="*";
+            }
+            console.log(linea);
+        }
+    }else{
+        console.log("El número debe ser mayot que 0");
+    }
+</script>
+</html>

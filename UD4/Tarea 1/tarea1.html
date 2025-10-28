@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function jugar(rondas = 5) {
+    var puntuacionTotalJugador1 = 0;
+    var puntuacionTotalJugador2 = 0;
+    
+    document.write("<h2>=== PARTIDA DE " + rondas + " RONDAS ===</h2>");
+    document.write("<br>");
+    
+    for (var rondaActual = 1; rondaActual <= rondas; rondaActual++) {
+     
+        var dado1Jugador1 = Math.floor(Math.random() * 6) + 1;
+        var dado2Jugador1 = Math.floor(Math.random() * 6) + 1;
+        var totalRondaJugador1 = dado1Jugador1 + dado2Jugador1;
+        puntuacionTotalJugador1 = puntuacionTotalJugador1 + totalRondaJugador1;
+        
+
+        var dado1Jugador2 = Math.floor(Math.random() * 6) + 1;
+        var dado2Jugador2 = Math.floor(Math.random() * 6) + 1;
+        var totalRondaJugador2 = dado1Jugador2 + dado2Jugador2;
+        puntuacionTotalJugador2 = puntuacionTotalJugador2 + totalRondaJugador2;
+
+        document.write("<h3>RONDA " + rondaActual + "</h3>");
+        document.write("Tirada Jugador 1: " + dado1Jugador1 + ", " + dado2Jugador1 + " - TOTAL Jugador 1: " + totalRondaJugador1 + "<br>");
+        document.write("Tirada Jugador 2: " + dado1Jugador2 + ", " + dado2Jugador2 + " - TOTAL Jugador 2: " + totalRondaJugador2 + "<br>");
+        document.write("<br>");
+    }
+    
+    
+    document.write("<h3>=== RESULTADOS FINALES ===</h3>");
+    document.write("Puntuación total acumulada Jugador 1: " + puntuacionTotalJugador1 + "<br>");
+    document.write("Puntuación total acumulada Jugador 2: " + puntuacionTotalJugador2 + "<br>");
+    document.write("<br>");
+    
+   
+    if (puntuacionTotalJugador1 > puntuacionTotalJugador2) {
+        document.write("<strong>🎉 ¡GANADOR: JUGADOR 1!</strong>");
+    } else if (puntuacionTotalJugador2 > puntuacionTotalJugador1) {
+        document.write("<strong>🎉 ¡GANADOR: JUGADOR 2!</strong>");
+    } else {
+        document.write("<strong>⚖️ ¡EMPATE!</strong>");
+    }
+    document.write("<br><br>");
+    document.write("==========================");
+    document.write("<br><br>");
+}
+
+var pruebaPorDefecto = "jugar() - 5 rondas por defecto";
+var pruebaTresRondas = "jugar(3) - 3 rondas especificadas";
+var pruebaDiezRondas = "jugar(10) - 10 rondas especificadas";
+
+
+document.write("<h1>SIMULACIÓN DE PARTIDA DE DADOS</h1>");
+document.write("<p><strong>Prueba 1:</strong> " + pruebaPorDefecto + "</p>");
+jugar();
+
+document.write("<p><strong>Prueba 2:</strong> " + pruebaTresRondas + "</p>");
+jugar(3);
+
+document.write("<p><strong>Prueba 3:</strong> " + pruebaDiezRondas + "</p>");
+jugar(10);
+</script>
+</html>

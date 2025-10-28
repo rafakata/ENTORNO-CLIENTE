@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2 - Conjuntos</title>
+</head>
+<body>
+    <script>
+        let array1 = [12, 12, 12, 14];
+        let array2 = [11, 11, 13, 15];
+        let array3 = ["i", "j", "k", "l"];
+
+
+        let conjunto = new Set([...array1, ...array2, ...array3]);
+        
+
+        document.write("El conjunto tiene " + conjunto.size + " elementos.<br><br>");
+
+
+        document.write("Elementos del conjunto en orden de inserción:<br>");
+        let i = 1;
+        for (let elemento of conjunto) {
+            document.write("Elemento " + i + ": " + elemento + "<br>");
+            i++;
+        }
+
+        // Explicación
+        document.write("<br>¿Por qué tiene " + conjunto.size + " elementos?<br>");
+        document.write("Porque un Set automáticamente elimina elementos duplicados:<br>");
+        document.write("- Array1 [12,12,12,14] → elementos únicos: 12, 14<br>");
+        document.write("- Array2 [11,11,13,15] → elementos únicos: 11, 13, 15<br>");
+        document.write("- Array3 ['i','j','k','l'] → elementos únicos: i, j, k, l<br>");
+        document.write("Total: 2 + 3 + 4 = " + conjunto.size + " elementos únicos");
+    </script>
+</body>
+</html>

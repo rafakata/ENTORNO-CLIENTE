@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+        let nombres = ["Ana", "Luis", "Maria"];
+        document.write("1. Array original: <br> " + nombres + " <br>");
+
+      
+        nombres.push("Pedro");
+        document.write("<br>2. Array con \"Pedro\" al final: <br>" + nombres + "<br>");
+
+       
+        nombres.unshift("Sofia");
+        document.write("<br>3. Array con \"Sofia\" al principio: <br>" + nombres + "<br>");
+
+        
+        nombres.shift();
+        document.write("<br>4. Array sin el primer invitado: <br>" + nombres + "<br>");
+
+       
+        nombres.pop();
+        document.write("<br>5. Array sin el último invitado: <br>" + nombres + "<br>");
+
+        
+        nombres.splice(2, 0, "Carlos", "Lucia");
+        document.write("<br>6. Array con \"Carlos\" y \"Lucia\" en la posición 2: <br>" + nombres + "<br>");
+
+       
+        let otrosNombres = ["Miguel", "Laura", "Ana"];
+        let listaUnida = nombres.concat(otrosNombres);
+        document.write("<br>7. Array unido con otra lista: <br>" + listaUnida + "<br>");
+
+    
+        let copia = listaUnida.slice(1, 4);
+        document.write("<br>8. Copia de los elementos entre la posición 1 y 3: <br>" + copia + "<br>");
+    
+        
+        let posicionAna = listaUnida.indexOf("Ana");
+        document.write("<br>9. Primera posición de \"Ana\": <br>" + posicionAna + "<br>");
+
+        
+        let ultimaPosicionAna = listaUnida.lastIndexOf("Ana");
+        document.write("<br>10. Última posición de \"Ana\": <br>" + ultimaPosicionAna + "<br>");
+
+        
+        if (listaUnida.includes("Laura")) {
+            document.write("<br>11. La lista contiene a \"Laura\".<br>");
+        } else {
+            document.write("<br>11. La lista NO contiene a \"Laura\".<br>");
+        }
+
+       
+        let cadenaNombres = listaUnida.join(", ");
+        document.write("<br>12. Lista como cadena de texto: <br>" + cadenaNombres + "<br>");
+
+      
+        listaUnida.sort();
+        document.write("<br>13. Lista ordenada alfabéticamente: <br>" + listaUnida + "<br>");
+
+       
+        listaUnida.reverse();
+        document.write("<br>14. Lista en orden inverso: <br>" + listaUnida + "<br>");
+</script>
+</html>

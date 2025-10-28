@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correos</title>
+</head>
+<body> 
+</body>
+ <script>
+        const listaCorreos = ["correo1@example.com", "correo2@example.com", "correo3@example.com", "correo1@example.com"];
+        
+        const conjuntoCorreos = new Set(listaCorreos);
+        console.log("1. Listado del conjunto de correos:");
+        console.log([...conjuntoCorreos]);
+
+        conjuntoCorreos.add("nuevo@example.com");
+        console.log("2. Listado del conjunto con el nuevo correo:");
+        console.log([...conjuntoCorreos]);
+
+        console.log("3. Comprobaciones:");
+        console.log("¿Está correo2@example.com?", conjuntoCorreos.has("correo2@example.com"));
+        console.log("¿Está noexiste@example.com?", conjuntoCorreos.has("noexiste@example.com"));
+
+
+        console.log("4. Total correos únicos:", conjuntoCorreos.size);
+        
+
+        conjuntoCorreos.delete("correo3@example.com");
+        console.log("5. Después de eliminar correo3@example.com:");
+        console.log([...conjuntoCorreos]);
+
+
+        const arrayCorreos = [...conjuntoCorreos];
+        arrayCorreos.push("mas1@example.com");
+        arrayCorreos.push("mas2@example.com");
+        console.log("6. Lista expandida de correos:");
+        console.log(arrayCorreos);
+        
+
+        conjuntoCorreos.clear();
+        console.log("7. Conjunto vacío tras clear:", conjuntoCorreos.size === 0);
+    </script>
+</html>

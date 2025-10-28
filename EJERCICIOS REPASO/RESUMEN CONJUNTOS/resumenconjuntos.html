@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+const invitados = ["Ana", "Luis", "María", "Ana", "Carlos", "Lucía", "Luis", "María", "Ana"];
+
+
+const conjuntoInvitados = new Set(invitados);
+const nombresUnicos = [...conjuntoInvitados];
+
+
+const conteoNombres = new Map();
+for (let i = 0; i < invitados.length; i++) {
+    const nombre = invitados[i];
+    if (conteoNombres.has(nombre)) {
+        conteoNombres.set(nombre, conteoNombres.get(nombre) + 1);
+    } else {
+        conteoNombres.set(nombre, 1);
+    }
+}
+
+
+const invitadosRepetidos = new Set();
+for (let [nombre, conteo] of conteoNombres) {
+    if (conteo > 1) {
+        invitadosRepetidos.add(nombre);
+    }
+}
+
+
+console.log("1. Lista de invitados:");
+console.log(invitados);
+
+console.log("\n2. Nombres únicos:");
+console.log(nombresUnicos);
+
+console.log("\n3. Conteo por nombre:");
+for (let [nombre, conteo] of conteoNombres) {
+    console.log(`   ${nombre}: ${conteo}`);
+}
+
+console.log("\n4. Invitados repetidos:");
+console.log([...invitadosRepetidos]);
+
+</script>
+</html>
