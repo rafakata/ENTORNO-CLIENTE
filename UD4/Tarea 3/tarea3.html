@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+let numero = parseInt(prompt("Introducir número mayor que cero: "));
+while (numero <= 0|| isNaN(numero)) {
+    alert("Número incorrecto, prueba otra vez.");
+    numero = parseInt(prompt("Introducir número mayor que cero: "));
+}
+
+document.write("CUENTA ATRÁS<br>");
+document.write("Número introducido: " + numero + "<br>");
+cuentaAtras(numero);
+
+function cuentaAtras(num) {
+    if (num >= 0) {
+        document.write(num + " ");
+        cuentaAtras(num - 1);
+    } else {
+        return;
+    }
+}
+</script>
+</html>
