@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+let palabra = prompt("Introduce una palabra:");
+let inicio = 0;
+let fin = palabra.length - 1;
+
+document.write("Palabra introducida es: " + palabra + "<br>");
+
+document.write("¿Es palíndroma? " + esPalindroma(palabra, inicio, fin));
+
+function esPalindroma(palabra, inicio, fin) {
+    if (inicio >= fin) {
+        return true;
+    }
+    if (palabra[inicio] != palabra[fin]) {
+        return false;
+    }
+    return esPalindroma(palabra, inicio + 1, fin - 1);
+}
+</script>
+</html>
