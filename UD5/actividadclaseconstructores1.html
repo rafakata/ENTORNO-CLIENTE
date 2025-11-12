@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Telefono{
+        constructor(cpu,ram,alm,anch,alt,cam){
+            this.cpu=cpu;
+            this.ram=ram;
+            this.almacenamiento=alm;
+            this.anchura=anch;
+            this.altura=alt;
+            this.ncamaras=cam;
+        }
+        toString(){
+            document.write("CPU: "+this.cpu+" /Ram: "+this.ram+" /Almacenamiento: "+this.almacenamiento+" /Anchura: "+this.anchura+" /Altura: "+this.altura+" /Numero de camaras: "+this.ncamaras+"<br>");
+        }
+    }
+    const telefono1=new Telefono("Snapdragon 888","8GB","256GB","6.5","12.4",4);
+    telefono1.toString();
+    const telefono2=new Telefono("Apple A14","6GB","128GB","5.8","11.7",2);
+    telefono2.toString();
+    const telefono3=new Telefono("Exynos 2100","12GB","128GB","6.1","11.8",3);
+    telefono3.toString();
+    const telefono4=new Telefono("Kirin 9000","8GB","256GB","6.6","12.5",3);
+    telefono4.toString();
+</script>
+</html>

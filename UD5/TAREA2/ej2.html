@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+class Trigonometria {
+  
+  gradosARadianes(grados) {
+    return grados * Math.PI / 180;
+  }
+
+  
+  radianesAGrados(radianes) {
+    return radianes * 180 / Math.PI;
+  }
+
+  
+  seno(radianes) {
+    return Math.sin(radianes);
+  }
+
+  
+  coseno(radianes) {
+    return Math.cos(radianes);
+  }
+
+  
+  tangente(radianes) {
+    return Math.tan(radianes);
+  }
+
+  
+  arcoseno(valor) {
+    return Math.asin(valor);
+  }
+
+  
+  arcocoseno(valor) {
+    return Math.acos(valor);
+  }
+
+  
+  arcotangente(valor) {
+    return Math.atan(valor);
+  }
+}
+
+
+const t = new Trigonometria();
+console.log("seno PI/4:", t.seno(Math.PI / 4));
+console.log("coseno PI/4:", t.coseno(Math.PI / 4));
+console.log("tangente PI/4:", t.tangente(Math.PI / 4));
+console.log("arcoseno 0.5:", t.arcoseno(0.5));
+console.log("arcocoseno 0.5:", t.arcocoseno(0.5));
+console.log("arcotangente 0.5:", t.arcotangente(0.5));
+
+</script>
+</html>

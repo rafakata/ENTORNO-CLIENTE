@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Fecha {
+         constructor(nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+            mostrarDiayHora() {
+                return new Date();
+            }
+        }
+
+let fecha = new Fecha("Rafael");
+document.write("Bienvenido " + fecha.nombreUsuario + "<br> el día y la hora actual es: <br>" + fecha.mostrarDiayHora());
+
+</script>
+</html>

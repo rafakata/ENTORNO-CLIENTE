@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+const datosJSON = `{
+  "nombre": "El Padrino",
+  "anio": 1972,
+  "duracion": 175,
+  "genero": "Drama",
+  "actores": [
+    "Marlon Brando",
+    "Al Pacino",
+    "James Caan",
+    "Richard S. Catellano",
+    "Robert Duvall",
+    "Sterling Hayden"
+  ],
+  "urlCartel": "https://imgs.search.brave.com/7Nf-bbJ0-dnp69FzPt4k_SDpvouTM7cUMk6ijYU0k5s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QlptTmlOek00/TVRjdE9ESTVZUzAw/TXpjekxXRTJNemt0/TnpZNFltTmpZakE1/WW1ZMVhrRXlYa0Zx/Y0djQC5qcGc",
+  "director": "Francis Ford Coppola"
+}`;
+
+class Pelicula {
+  constructor(json) {
+    const obj = JSON.parse(json);
+    this.nombre = obj.nombre;
+    this.anio = obj.anio;
+    this.duracion = obj.duracion;
+    this.genero = obj.genero;
+    this.actores = obj.actores;
+    this.urlCartel = obj.urlCartel;
+    this.director = obj.director;
+  }
+
+  mostrar() {
+    console.log(`Nombre: ` +this.nombre);
+    console.log(`Año de estreno: ` +this.anio);
+    console.log(`Duración: ` +this.duracion);
+    console.log(`Género: ` +this.genero);
+    console.log(`Actores principales: ` +this.actores.join(", "));
+    console.log(`URL del cartel: ` +this.urlCartel);
+    console.log(`Director: ` +this.director);
+  }
+}
+const peli = new Pelicula(datosJSON);
+peli.mostrar();
+
+</script>
+</html>

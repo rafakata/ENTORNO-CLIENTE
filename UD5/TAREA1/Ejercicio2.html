@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Telefono{
+        constructor(num){
+            this.numero = num;
+        }
+        llamar(){
+            console.log(`Llamando al número de Teléfono `+this.numero+`...`);
+        }
+    }
+    class TelefonoFijo extends Telefono{
+        constructor(num,ext){
+            super(num);
+            this.extension = ext;
+        }
+        llamar(){
+            console.log(`Llamando al número de Teléfono Fijo `+this.numero+` con extensión `+this.extension+`...`);
+        }
+        recibirLlamada(){
+            console.log(`Recibiendo llamada en el Teléfono Fijo `+this.numero+` con extensión `+this.extension+`...`);
+        }
+    }
+    class TelefonoMovil extends Telefono{
+        constructor(num,comp){
+            super(num);
+            this.compañia = comp;
+        }
+        llamar(){
+            console.log(`Llamando al número de Teléfono Móvil `+this.numero+` de la compañía `+this.compañia+`...`);
+        }
+        recibirLlamada(){
+            console.log(`Recibiendo llamada en el Teléfono Móvil `+this.numero+` de la compañía `+this.compañia+`...`);
+        }
+        enviarmensaje(msg){
+            console.log(`Enviando mensaje: "${msg}" desde el Teléfono Móvil `+this.numero+` de la compañía `+this.compañia+`...`);
+        }
+    }
+
+    const t1=new Telefono(612345678);
+    const tf1=new TelefonoFijo(912345678,123);
+    const tm1=new TelefonoMovil(612345678,"Movistar");
+
+    t1.llamar();
+    tf1.llamar();
+    tf1.recibirLlamada();
+    tm1.llamar();
+    tm1.recibirLlamada();
+    tm1.enviarmensaje("Hola, ¿cómo estás?");
+</script>
+</html>
