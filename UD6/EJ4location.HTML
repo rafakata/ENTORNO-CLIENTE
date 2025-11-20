@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="verificarEntrada()">Ingresar a Youtube</button>
+</body>
+<script>
+    // Función vinculada al botón
+        function verificarEntrada() {
+            // Muestra una ventana de confirmación (window.confirm)
+            // Devuelve true si el usuario pulsa "Aceptar" y false si pulsa "Cancelar"
+            if (window.confirm("¿Desea salir del sitio e ingresar a Youtube?")) {
+                // Si pulsa sí (Aceptar), redirecciona usando window.location
+                window.location = "https://www.youtube.com";
+            } else {
+                // Si pulsa Cancelar, muestra un mensaje con window.alert
+                window.alert("No hay problema");
+            }
+        }
+</script>
+</html>

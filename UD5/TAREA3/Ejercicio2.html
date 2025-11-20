@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function validarEmail(email) {
+    const simbolos = "[a-zA-Z0-9#*+&’!%@?{^}]";
+    const parteLocal = simbolos + "+(?:\\." + simbolos + "+)*";
+    const dominio = "[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)+";
+    const patron = new RegExp('^' + parteLocal + '@' + dominio + '$');
+    return patron.test(email);
+}
+
+let ejemplos = [
+  "hola@tu.casa.net", // válido
+  "mi.email.140dominio.com", // no válido (no tiene @)
+  "nombre+apellido@ejemplo.com", // válido
+  "@ejemplo.com", // no válido (primera parte vacía)
+];
+
+ejemplos.forEach(function(correo){
+  console.log(correo + " : " + (validarEmail(correo) ? "Válido" : "No válido"));
+});
+</script>
+</html>

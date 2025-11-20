@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <h1>Recordatorio periódico</h1>
+    <p>Esta página mostrará un recordatorio cada 5 segundos hasta que pulses Cancelar.</p>
+    <script>
+        let idIntervalo;
+        function mostrarRecordatorio() {
+            const respuesta = window.confirm("¿Quieres seguir recibiendo este recordatorio?");
+
+            if (respuesta === false) {
+                clearInterval(idIntervalo);    
+                alert("Has detenido los recordatorios."); 
+            }
+        }
+        idIntervalo = setInterval(mostrarRecordatorio, 5000);
+    </script>
+</body>
+</html>

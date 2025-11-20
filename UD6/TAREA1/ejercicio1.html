@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<button id="ventana1">Abrir ventana 600x300</button>
+<button id="ventana2">Abrir ventana pantalla completa/2 altura</button>
+</body>
+<script>
+    if (navigator.cookieEnabled) {
+      alert("Las cookies están activas en tu navegador.");
+    } else {
+      alert("Las cookies NO están activas en tu navegador.");
+    }
+    document.getElementById("ventana1").onclick = function() {
+      window.open(
+        "", 
+        "ventana1",
+        "width=600,height=300"
+      );
+    };
+    document.getElementById("ventana2").onclick = function() {
+      var ancho = window.screen.width;
+      var alto = Math.floor(window.screen.height / 2);
+      window.open(
+        "",
+        "ventana2",
+        "width=" + ancho + ",height=" + alto
+      );
+    };
+</script>
+</html>

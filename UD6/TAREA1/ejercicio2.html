@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<button id="redirBtn">Generar y redireccionar</button>
+<p id="mensaje"></p>
+<script>
+document.getElementById('redirBtn').onclick = function () {
+      let valor = Math.floor(Math.random() * 3);
+      let texto = "";
+      let url = "";
+
+      if (valor === 0) {
+        texto = "Has obtenido el valor 0. Vas a ser redirigido a Outlook.";
+        url = "https://outlook.live.com/";
+      } else if (valor === 1) {
+        texto = "Has obtenido el valor 1. Vas a ser redirigido a Gmail.";
+        url = "https://mail.google.com/";
+      } else if (valor === 2) {
+        texto = "Has obtenido el valor 2. Vas a ser redirigido a Yahoo.";
+        url = "https://mail.yahoo.com/";
+      }
+
+      document.getElementById('mensaje').textContent = texto;
+
+      setTimeout(function () {
+        window.location.href = url;
+      }, 2000); 
+    };
+  </script>
+</script>
+</body>
+
+</html>
